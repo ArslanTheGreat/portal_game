@@ -34,7 +34,10 @@ public class PlayerCollisionHandler : MonoBehaviour
     {
         Debug.Log("Ending the game...");
         // Ensure the scene exists in Build Settings
-        SceneManager.LoadScene(gameOverScene);
+
+        // use LoadSceneAsync instead of LoadScene to avoid performance issues
+        SceneManager.LoadSceneAsync(gameOverScene, LoadSceneMode.Single);
+      
     }
 }
 
